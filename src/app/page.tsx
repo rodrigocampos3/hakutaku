@@ -9,6 +9,7 @@ import { useState } from 'react';
 import Peoples from "@/icons/peoples";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import LogoS from "../icons/logos.svg"
 import {
   Select,
   SelectContent,
@@ -23,6 +24,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import Monster from "../icons/monster.svg"
+import CustomNavbar from "@/components/navbar";
+
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -173,12 +176,12 @@ export default function Home() {
       <Input type="text" id="mais" value={formData.mais} onChange={handleChange} placeholder="O que a Hakutaku irá mais te ajudar?" />
     </div>
   </div>
-  <Button type="submit" className="w-full sm:w-auto self-center my-5 bg-[#C25621]">Enviar</Button>
+  <Button type="submit" className="w-full text-xl  px-10 sm:w-auto self-center bg-[#C25621]">Enviar</Button>
 </form>
 
         </div>
       </section>
-      <section className="flex flex-col items-center w-full p-5 gap-5 text-[#310808]">
+      <section className="flex flex-col items-center w-full md:my-8 p-5 gap-5 text-[#310808]">
   <h2 className="text-3xl text-[#C25621] font-bold">Dúvidas frequentes</h2>
   
   <div className="flex flex-col sm:flex-row w-full">
