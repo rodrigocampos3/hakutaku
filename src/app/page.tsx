@@ -26,6 +26,9 @@ import {
 import Monster from "../icons/monster.svg"
 import CustomNavbar from "@/components/navbar";
 
+import React, { useRef } from 'react';
+
+
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -54,7 +57,7 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await fetch('/api/send-email', {
+    const res = await fetch('https://api.hakutaku.co/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -77,7 +80,25 @@ export default function Home() {
     }
   };
 
+    // Obtém o botão pelo ID
+    const scrollButton = document.getElementById('scrollButton');
 
+    // Adiciona um ouvinte de evento para scroll suave ao clicar no botão
+    scrollButton?.addEventListener('click', () => {
+      // Rola suavemente até a seção 2 diretamente
+      document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const section2Ref = useRef<HTMLDivElement>(null);
+
+    const scrollToSection = () => {
+      if (section2Ref.current) {
+        section2Ref.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+  
+  
+  
   return (
     <main className="flex min-h-screen flex-col items-center p-2 bg-[#F9F6F0]">
       <Nav />
@@ -87,7 +108,7 @@ export default function Home() {
           <p className="text-[#310808] text-xs md:text-lg">A Hakutaku é a solução ideal para empresas que buscam eficiência e precisão. Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam,
             valorizando o conhecimento criado dentro da própria empresa. Está pronto para transformar a gestão de conhecimento da sua empresa?</p>
           <div className="flex flex-row gap-x-4">
-            <Button variant="outline" className="bg-[#C25621] text-white rounded-xl">Explore a Hakutaku</Button>
+            <Button  variant="outline" onClick={scrollToSection} className="bg-[#C25621] text-white rounded-xl"  > Explore a Hakutaku</Button>
             <Button variant="outline" className="bg-transparent text-black border border-3 rounded-xl px-8 font-bold">Saiba mais</Button>
           </div>
         </div>
@@ -96,7 +117,7 @@ export default function Home() {
 
         </div>
       </section>
-      <section className="flex md:h-screen w-full md:p-20 md:gap-40 flex-col justify-center">
+      <section className="flex py-20 md:py-10 md:h-screen w-full md:p-20 md:gap-40 flex-col justify-center" id="mais">
         <div  className="flex md:h-screen w-full md:gap-40 gap-y-10 flex-col md:flex-row justify-center items-center">
         <div className="flex w-full px-10 md:w-2/5 text-[#310808]  gap-y-2 flex-col text-center">
           <h3 className="text-xl md:text-3xl font-bold">Aumento de        <br />
@@ -135,7 +156,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex h-1/2 w-full px-10 md:px-20 gap-40 flex-col items-center">
+      <section className="flex h-1/2 w-full px-10 md:px-20 gap-40 flex-col py-20 md:py-10 items-center" id="contato" ref={section2Ref}>
         <div className="w-full text-center flex  flex-col ">
           <h2 className="text-3xl text-[#C25621] font-bold">Agende uma Demonstração</h2>
           <p className="text-[#310808]">Veja a Hakutaku em ação! Preencha o formulário para agendar uma demonstração personalizada.</p>
@@ -181,11 +202,11 @@ export default function Home() {
 
         </div>
       </section>
-      <section className="flex flex-col items-center w-full md:my-8 p-5 gap-5 text-[#310808]">
+      <section className="flex flex-col items-center w-full md:my-8 p-5 gap-5 text-[#310808]" id="duvidas">
   <h2 className="text-3xl text-[#C25621] font-bold">Dúvidas frequentes</h2>
   
   <div className="flex flex-col sm:flex-row w-full">
-    <div className="w-full md:w-1/3 sm:w-1/3 mb-5 sm:mb-0 md:flex sm:justify-center">
+    <div className="w-full md:w-1/3  mb-5 sm:mb-0 md:flex flex items-center justify-center">
       <Image alt="imagem" src={Monster} />
     </div>
     <div className="w-full md:w-2/3 flex flex-col gap-3">
@@ -193,31 +214,25 @@ export default function Home() {
         <AccordionItem value="item-1">
           <AccordionTrigger>Como é implementado?</AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          O onboarding da plataforma é feito conosco, a fim de garantir uma transição suave e eficiente.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger>Quanto custa?</AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          O custo é calculado por colaborador que usará a plataforma. Entre em contato para obter uma proposta.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>Funciona para quais plataformas?</AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          Até o momento somente para Google Drive, mas estamos trabalhando para incluir demais plataformas.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
           <AccordionTrigger>Como a Hakutaku garante a segurança das informações?</AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-5">
-          <AccordionTrigger>Como a Hakutaku ajuda na conformidade com regulamentos da LGPD?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          A Hakutaku garante a segurança das informações empresariais através de um rigoroso controle de acesso baseado em funções (RBAC) e da adoção de políticas de segurança alinhadas aos mais altos padrões internacionais, como ISO 27001. Isso garante que apenas usuários autorizados tenham acesso às informações necessárias para suas atividades, protegendo assim a integridade e a confidencialidade dos dados empresariais. Além disso, estamos comprometidos em garantir a conformidade com regulamentos de proteção de dados, como a LGPD, através de medidas robustas de gerenciamento de consentimento, anonimização de dados e transparência no processamento de informações pessoais.
           </AccordionContent>
         </AccordionItem>
       </Accordion>
