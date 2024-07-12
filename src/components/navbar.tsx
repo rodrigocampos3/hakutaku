@@ -6,7 +6,7 @@ import Logo from "../icons/logo"
 export default function App() {
   return (
       <Navbar
-          className="md:w-full bg-[#F9F6F0] justify-center"
+          className="w-full md:w-full bg-[#F9F6F0] justify-center"
       classNames={{
           item: [
           "flex",
@@ -24,9 +24,7 @@ export default function App() {
         ],
       }}
     >
-      <NavbarBrand>
         <Logo />
-      </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#mais">
@@ -43,11 +41,6 @@ export default function App() {
           Dúvidas frequentes
           </Link>
               </NavbarItem>
-              <NavbarItem>
-          <Button as={Link} className="bg-[#C25621] text-white font-bold" href="#contato" variant="flat">
-             Explore
-          </Button>
-        </NavbarItem>
       </NavbarContent>
     </Navbar>
   );

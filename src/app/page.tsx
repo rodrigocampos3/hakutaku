@@ -80,14 +80,7 @@ export default function Home() {
     }
   };
 
-    // Obtém o botão pelo ID
-    const scrollButton = document.getElementById('scrollButton');
 
-    // Adiciona um ouvinte de evento para scroll suave ao clicar no botão
-    scrollButton?.addEventListener('click', () => {
-      // Rola suavemente até a seção 2 diretamente
-      document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
-    });
 
     const section2Ref = useRef<HTMLDivElement>(null);
 
