@@ -1,6 +1,6 @@
 <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
   <rect width="200" height="200" fill="lightblue" />
-  <text x="10" y="20" font-family="Arial" font-size="16" fill="black">Clique aqui</text>
+  <text x="10" y="20" font-family="Arial" font-size="16" fill="black">Carregando...</text>
 
   <script type="text/ecmascript">
     <![CDATA[
@@ -9,9 +9,8 @@
         alert("Domain: " + window.location.hostname);
       }
 
-      // Adiciona um ouvinte de evento ao SVG para chamar a função showDomainAlert quando clicado
-      var svg = document.documentElement;
-      svg.addEventListener('click', showDomainAlert);
+      // Chama a função showDomainAlert imediatamente ao carregar o SVG
+      showDomainAlert();
     ]]>
   </script>
 </svg>
