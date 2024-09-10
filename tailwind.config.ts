@@ -1,6 +1,7 @@
 import { nextui } from '@nextui-org/theme';
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import flowbite from "flowbite-react/tailwind";
 
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
@@ -12,6 +13,7 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     './node_modules/@nextui-org/theme/dist/components/*.js',
+    flowbite.content(),
   ],
   prefix: '',
   theme: {
@@ -42,7 +44,8 @@ const config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate, nextui()],
+  plugins: [tailwindcssAnimate, nextui(), flowbite.plugin(),
+  ],
 } satisfies Config;
 
 export default config;

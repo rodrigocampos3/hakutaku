@@ -2,14 +2,16 @@
 import Image from "next/image";
 import Nav from "@/components/navbar";
 import { Button } from "@/components/ui/button"
-import img from "../icons/ima.svg"
+import img from "../../public/tela.svg"
 import Brain from "@/icons/brain";
 import Lab from "@/icons/lab";
 import { useState } from 'react';
+import { Pridi } from '@next/font/google';
 import Peoples from "@/icons/peoples";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import LogoS from "../icons/logos.svg"
+import { Component } from "@/components/Nav";
 import {
   Select,
   SelectContent,
@@ -23,11 +25,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import Monster from "../icons/monster.svg"
+import Monster from "../icons/monster2.svg"
 import CustomNavbar from "@/components/navbar";
 
 import React, { useRef } from 'react';
 
+const pridi = Pridi({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'], // Escolha os pesos que precisa
+});
 
 
 export default function Home() {
@@ -93,16 +99,16 @@ export default function Home() {
   
   
   return (
-    <main className="flex min-h-screen flex-col items-center p-2 bg-[#F9F6F0]">
-      <Nav />
+    <main className="flex min-h-screen flex-col items-center bg-[#F9F6F0]">
+      <Component />
       <section className=" flex flex-col flex-col-reverse  md:flex-row flex-grow w-full" id="principal">
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
           <h1 className="text-xl md:text-6xl font-bold leading-relaxed text-[#310808]">Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
           <p className="text-[#310808] text-xs md:text-lg">A Hakutaku é a solução ideal para empresas que buscam eficiência e precisão. Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam,
             valorizando o conhecimento criado dentro da própria empresa. Está pronto para transformar a gestão de conhecimento da sua empresa?</p>
           <div className="flex flex-row gap-x-4">
-            <Button  variant="outline" onClick={scrollToSection} className="bg-[#C25621] text-white rounded-xl"  > Explore a Hakutaku</Button>
-            <Button variant="outline" className="bg-transparent text-black border border-3 rounded-xl px-8 font-bold">Saiba mais</Button>
+            <Button  variant="outline" onClick={scrollToSection} className="bg-[#FF781F] text-white rounded-xl"  > Explore a Hakutaku</Button>
+            <Button variant="outline" className="bg-transparent text-black  border-3 rounded-xl px-8 font-bold">Saiba mais</Button>
           </div>
         </div>
         <div className=" flex flex-col flex-grow sm:items-center sm:justify-center w-full  md:w-2/5">
@@ -110,7 +116,7 @@ export default function Home() {
 
         </div>
       </section>
-      <section className="flex py-20 md:py-10 md:h-screen w-full md:p-20 md:gap-40 flex-col justify-center" id="mais">
+      <section className="flex py-20 md:py-10 md:h-screen w-full md:p-20 md:gap-40 flex-col justify-center" id="conheca">
         <div  className="flex md:h-screen w-full md:gap-40 gap-y-10 flex-col md:flex-row justify-center items-center">
         <div className="flex w-full px-10 md:w-2/5 text-[#310808]  gap-y-2 flex-col text-center">
           <h3 className="text-xl md:text-3xl font-bold">Aumento de        <br />
@@ -151,8 +157,8 @@ export default function Home() {
       </section>
       <section className="flex h-1/2 w-full px-10 md:px-20 gap-40 flex-col py-20 md:py-10 items-center" id="contato" ref={section2Ref}>
         <div className="w-full text-center flex  flex-col ">
-          <h2 className="text-3xl text-[#C25621] font-bold">Agende uma Demonstração</h2>
-          <p className="text-[#310808]">Veja a Hakutaku em ação! Preencha o formulário para agendar uma demonstração personalizada.</p>
+          <h2 className="text-3xl text-[#FF781F] font-bold">Agende uma Demonstração</h2>
+          <p className="text-[#FF781F]">Veja a Hakutaku em ação! Preencha o formulário para agendar uma demonstração personalizada.</p>
           <form onSubmit={handleSubmit}>
   <div className="sm:flex sm:flex-wrap justify-center md:gap-x-5 md:py-10 gap-y-5">
     <div className="w-full max-w-sm text-left mb-5">
@@ -190,19 +196,19 @@ export default function Home() {
       <Input type="text" id="mais" value={formData.mais} onChange={handleChange} placeholder="O que a Hakutaku irá mais te ajudar?" />
     </div>
   </div>
-  <Button type="submit" className="w-full text-xl  px-10 sm:w-auto self-center bg-[#C25621]">Enviar</Button>
+  <Button type="submit" className="w-full text-xl  px-10 sm:w-auto self-center bg-[#FF781F]">Enviar</Button>
 </form>
 
         </div>
       </section>
       <section className="flex flex-col items-center w-full md:my-8 p-5 gap-5 text-[#310808]" id="duvidas">
-  <h2 className="text-3xl text-[#C25621] font-bold">Dúvidas frequentes</h2>
+  <h2 className="text-3xl text-[#FF781F] font-bold">Dúvidas frequentes</h2>
   
   <div className="flex flex-col sm:flex-row w-full">
     <div className="w-full md:w-1/3  mb-5 sm:mb-0 md:flex flex items-center justify-center">
       <Image alt="imagem" src={Monster} />
     </div>
-    <div className="w-full md:w-2/3 flex flex-col gap-3">
+    <div className="w-full md:w-2/3 flex flex-col gap-3 font-bold">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>Como é implementado?</AccordionTrigger>
@@ -227,7 +233,14 @@ export default function Home() {
           <AccordionContent>
           A Hakutaku garante a segurança das informações empresariais através de um rigoroso controle de acesso baseado em funções (RBAC) e da adoção de políticas de segurança alinhadas aos mais altos padrões internacionais, como ISO 27001. Isso garante que apenas usuários autorizados tenham acesso às informações necessárias para suas atividades, protegendo assim a integridade e a confidencialidade dos dados empresariais. Além disso, estamos comprometidos em garantir a conformidade com regulamentos de proteção de dados, como a LGPD, através de medidas robustas de gerenciamento de consentimento, anonimização de dados e transparência no processamento de informações pessoais.
           </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+          <AccordionTrigger>Como a Hakutaku garante a segurança das informações?</AccordionTrigger>
+          <AccordionContent>
+          A Hakutaku garante a segurança das informações empresariais através de um rigoroso controle de acesso baseado em funções (RBAC) e da adoção de políticas de segurança alinhadas aos mais altos padrões internacionais, como ISO 27001. Isso garante que apenas usuários autorizados tenham acesso às informações necessárias para suas atividades, protegendo assim a integridade e a confidencialidade dos dados empresariais. Além disso, estamos comprometidos em garantir a conformidade com regulamentos de proteção de dados, como a LGPD, através de medidas robustas de gerenciamento de consentimento, anonimização de dados e transparência no processamento de informações pessoais.
+          </AccordionContent>
         </AccordionItem>
+        
       </Accordion>
     </div>
   </div>
