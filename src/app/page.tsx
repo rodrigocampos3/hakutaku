@@ -35,6 +35,13 @@ const pridi = Pridi({
   weight: ['400', '500', '600'], // Escolha os pesos que precisa
 });
 
+import { Outfit } from "@next/font/google";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -95,15 +102,15 @@ export default function Home() {
         section2Ref.current.scrollIntoView({ behavior: 'smooth' });
       }
     };
-  
-  
+
   
   return (
-    <main className="flex min-h-screen flex-col items-center bg-[#F9F6F0]">
+    <main className="flex min-h-screen flex-col items-center bg-[#EDE9E1]">
       <Component />
       <section className=" flex flex-col  md:flex-row flex-grow w-full" id="principal">
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
-          <h1 className="text-xl md:text-6xl font-bold leading-relaxed text-[#310808]">Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
+        <h1 className={`${outfit.className} text-xl md:text-6xl font-bold leading-relaxed text-[#310808]`}>
+        Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
           <p className="text-[#310808] text-xs md:text-lg">A Hakutaku é a solução ideal para empresas que buscam eficiência e precisão. Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam,
             valorizando o conhecimento criado dentro da própria empresa. Está pronto para transformar a gestão de conhecimento da sua empresa?</p>
           <div className="flex flex-row gap-x-4">
