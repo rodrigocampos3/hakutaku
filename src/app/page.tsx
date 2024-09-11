@@ -109,7 +109,7 @@ export default function Home() {
       <Component />
       <section className=" flex flex-col  md:flex-row flex-grow w-full" id="principal">
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
-        <h1 className={`${outfit.className} text-xl md:text-6xl font-bold leading-relaxed text-[#310808]`}>
+        <h1 className={`${outfit.className} text-xl md:text-6xl font-bold leading-relaxed text-[##393736]`}>
         Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
           <p className="text-[#310808] text-xs md:text-lg">A Hakutaku é a solução ideal para empresas que buscam eficiência e precisão. Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam,
             valorizando o conhecimento criado dentro da própria empresa. Está pronto para transformar a gestão de conhecimento da sua empresa?</p>
@@ -240,14 +240,7 @@ export default function Home() {
           <AccordionContent>
           A Hakutaku garante a segurança das informações empresariais através de um rigoroso controle de acesso baseado em funções (RBAC) e da adoção de políticas de segurança alinhadas aos mais altos padrões internacionais, como ISO 27001. Isso garante que apenas usuários autorizados tenham acesso às informações necessárias para suas atividades, protegendo assim a integridade e a confidencialidade dos dados empresariais. Além disso, estamos comprometidos em garantir a conformidade com regulamentos de proteção de dados, como a LGPD, através de medidas robustas de gerenciamento de consentimento, anonimização de dados e transparência no processamento de informações pessoais.
           </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-          <AccordionTrigger>Como a Hakutaku garante a segurança das informações?</AccordionTrigger>
-          <AccordionContent>
-          A Hakutaku garante a segurança das informações empresariais através de um rigoroso controle de acesso baseado em funções (RBAC) e da adoção de políticas de segurança alinhadas aos mais altos padrões internacionais, como ISO 27001. Isso garante que apenas usuários autorizados tenham acesso às informações necessárias para suas atividades, protegendo assim a integridade e a confidencialidade dos dados empresariais. Além disso, estamos comprometidos em garantir a conformidade com regulamentos de proteção de dados, como a LGPD, através de medidas robustas de gerenciamento de consentimento, anonimização de dados e transparência no processamento de informações pessoais.
-          </AccordionContent>
-        </AccordionItem>
-        
+          </AccordionItem>
       </Accordion>
     </div>
   </div>
