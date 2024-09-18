@@ -27,6 +27,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
+        pridi: ['Pridi', 'serif'], // Adiciona a fonte "Pridi"
       },
       keyframes: {
         'accordion-down': {
@@ -44,8 +45,7 @@ const config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate, nextui(), flowbite.plugin(),
-  ],
+  plugins: [tailwindcssAnimate, nextui(), flowbite.plugin()],
 } satisfies Config;
 
 export default config;

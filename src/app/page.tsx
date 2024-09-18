@@ -6,10 +6,10 @@ import img from "../../public/tela.svg"
 import Brain from "@/icons/brain";
 import Lab from "@/icons/lab";
 import { useState } from 'react';
-import { Pridi } from '@next/font/google';
 import Peoples from "@/icons/peoples";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Pridi } from "@next/font/google";
 import LogoS from "../icons/logos.svg"
 import { Component } from "@/components/Nav";
 import {
@@ -111,7 +111,7 @@ export default function Home() {
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
         <h1 className={`${outfit.className} text-xl md:text-6xl font-bold leading-relaxed text-[##393736]`}>
         Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
-          <p className="text-[#310808] text-xs md:text-lg">A Hakutaku é a solução ideal para empresas que buscam eficiência e precisão. Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam,
+          <p className={`text-[#310808] text-xs md:text-lg font-pridi ${pridi.className}`}>A Hakutaku é a solução ideal para empresas que buscam eficiência e precisão. Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam,
             valorizando o conhecimento criado dentro da própria empresa. Está pronto para transformar a gestão de conhecimento da sua empresa?</p>
           <div className="flex flex-row gap-x-4">
             <Button  variant="outline" onClick={scrollToSection} className="bg-[#FF781F] text-white rounded-xl"  > Explore a Hakutaku</Button>
