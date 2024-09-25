@@ -6,10 +6,16 @@ import img from "../../public/tela.svg"
 import Brain from "@/icons/brain";
 import Lab from "@/icons/lab";
 import { useState } from 'react';
+import BlurFade from "@/components/magicui/blur-fade";
+import footerImg from "@/icons/footerImg.svg"
+import KnowledgeManagementSection from "@/components/KnowledgeManagementSection"
 import Peoples from "@/icons/peoples";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { AnimatedBeamMultipleOutputDemo } from "@/components/AnimatedBeam";
 import { Pridi } from "@next/font/google";
+import icon1 from "../icons/Group1.svg"
+import icon2 from "../icons/Group.svg"
 import LogoS from "../icons/logos.svg"
 import { Component } from "@/components/Nav";
 import {
@@ -27,7 +33,6 @@ import {
 } from "@/components/ui/accordion"
 import Monster from "../icons/monster2.svg"
 import CustomNavbar from "@/components/navbar";
-
 import React, { useRef } from 'react';
 
 const pridi = Pridi({
@@ -45,10 +50,6 @@ const outfit = Outfit({
 
 export default function Home() {
   const [formData, setFormData] = useState({
-    nome: '',
-    empresa: '',
-    funcionarios: '',
-    celular: '',
     email: '',
     mais: ''
   });
@@ -81,10 +82,6 @@ export default function Home() {
     if (res.ok) {
       alert('Email enviado com sucesso!');
       setFormData({
-        nome: '',
-        empresa: '',
-        funcionarios: '',
-        celular: '',
         email: '',
         mais: ''
       });
@@ -103,45 +100,71 @@ export default function Home() {
       }
     };
 
-  
+    
   return (
     <main className="flex min-h-screen flex-col items-center bg-[#EDE9E1]">
       <Component />
-      <section className=" flex flex-col  md:flex-row flex-grow w-full" id="principal">
+      <section className=" flex flex-col px-40   py-20 md:flex-row flex-grow w-full" id="principal">
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
         <h1 className={`${outfit.className} text-xl md:text-6xl font-bold leading-relaxed text-[##393736]`}>
-        Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
-          <p className={`text-[#310808] text-xs md:text-lg font-pridi ${pridi.className}`}>A Hakutaku é a solução ideal para empresas que buscam eficiência e precisão. Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam,
-            valorizando o conhecimento criado dentro da própria empresa. Está pronto para transformar a gestão de conhecimento da sua empresa?</p>
-          <div className="flex flex-row gap-x-4">
-            <Button  variant="outline" onClick={scrollToSection} className="bg-[#FF781F] text-white rounded-xl"  > Explore a Hakutaku</Button>
-            <Button variant="outline" className="bg-transparent text-black  border-3 rounded-xl px-8 font-bold">Saiba mais</Button>
+            Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
+            <BlurFade delay={0.05} inView>  
+        
+            <p className={`text-[#310808] text-xs md:text-3xl font-pridi ${pridi.className}`}>Utilizando gen AI, capturamos e entregamos rapidamente as informações e insights que seus colaboradores precisam, valorizando o conhecimento criado dentro da própria empresa.</p>
+            </BlurFade>
+            <div className="flex flex-row gap-x-4">
+            <Button  variant="outline" onClick={scrollToSection} className="bg-[#FF781F] text-white rounded-none lg:text-2xl"  > Explore a Hakutaku Agora</Button>
+            <Button variant="outline" className="bg-transparent text-black border-black rounded-none lg:text-2xl border px-10 p-4 font-bold">Saiba mais</Button>
           </div>
         </div>
         <div className=" flex flex-col flex-grow sm:items-center sm:justify-center w-full  md:w-2/5">
-            <Image alt="imagem" src={img}></Image>
+        {/* <AnimatedBeamDemo /> */}
+            <Image alt="imagem" src={img} width={800}></Image>
 
         </div>
       </section>
-      <section className="flex py-20 md:py-10 md:h-screen w-full md:p-20 md:gap-40 flex-col justify-center" id="conheca">
-        <div  className="flex md:h-screen w-full md:gap-40 gap-y-10 flex-col md:flex-row justify-center items-center">
-        <div className="flex w-full px-10 md:w-2/5 text-[#310808]  gap-y-2 flex-col text-center">
-          <h3 className="text-xl md:text-3xl font-bold">Aumento de        <br />
+      <section className="w-full px-40 flex flex-row items-center justify-between">
+        <div className="w-1/2 h-full flex flex-col items-start">
+        <AnimatedBeamMultipleOutputDemo></AnimatedBeamMultipleOutputDemo>
+        </div>
+        <div className="w-1/2 h-full flex flex-col justify-center">
+          <h1 className="text-4xl font-bold">Acesso Simplificado a Dados de Múltiplas Fontes</h1>
+          <p className="text-xl">Nosso sistema integra e consome dados de diversas fontes, facilitando o acesso a informações relevantes de maneira centralizada. Com uma interface intuitiva via chat, você pode buscar e consultar dados rapidamente, sem complicações.</p>
+
+        </div>
+
+
+
+
+      </section>
+      <section className="flex py-20 md:py-20 px-40 md:h-screen w-full md:gap-40 flex-col" id="conheca">
+
+        <BlurFade className="flex md:h-screen w-full md:gap-40 gap-y-10 flex-col md:flex-row justify-between items-center">
+
+        <div className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl">
+          <h3 className="text-xl md:text-3xl font-bold">Aumento de
           produtividade</h3>
           <p>Maximize a eficiência operacional e reduza o tempo gasto em buscas por informação. Com a Hakutaku, sua equipe pode focar no que realmente importa,
-            impulsionando a produtividade e otimizando recursos. Acelere processos e elimine redundâncias agora.</p>
-
-        </div>
-        <div className="flex w-full px-10 md:w-2/5 text-[#310808] md:gap-y-2 flex-col text-center">
-          <h3 className="text-xl md:text-3xl font-bold">Centralização e valorização do conhecimento organizacional</h3>
-          <p>Consolide e valorize o conhecimento crítico da sua empresa com a Hakutaku. Nossa plataforma facilita o acesso a informações valiosas,
-            promovendo uma cultura de aprendizado contínuo e inovação. Fortaleça a tomada de decisão e a colaboração efetiva.</p>
+              impulsionando a produtividade e otimizando recursos. Acelere processos e elimine redundâncias agora.</p>
+              <Image alt="imagem" src={icon1} width={200}></Image>
 
 
         </div>
+        <div className={`flex w-full md:w-2/5 text-white gap-y-2 flex-col items-center text-center bg-[#FF791F] p-8 rounded-3xl ${outfit.className}`}>
+      <h3 className="text-xl md:text-3xl font-bold">
+        Valorização do conhecimento
+      </h3>
+      <p>
+        Consolide e valorize o conhecimento crítico da sua empresa com a Hakutaku. Nossa plataforma facilita o acesso a informações valiosas,
+        promovendo uma cultura de aprendizado contínuo e inovação. Fortaleça a tomada de decisão e a colaboração efetiva.
+      </p>
+      <Image alt="imagem" src={icon1} width={200} />
+    </div>
 
 
-        </div>
+          </BlurFade>
+
+
         <div className="flex h-screen w-full gap-20 flex-col md:flex-row justify-center text-[#310808]">
           <div className="w-full md:w-1/3 flex flex-col items-center p-2 text-center">
             <Brain />
@@ -162,21 +185,25 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex h-1/2 w-full px-10 md:px-20 gap-40 flex-col py-20 md:py-10 items-center" id="contato" ref={section2Ref}>
-        <div className="w-full text-center flex  flex-col ">
-          <h2 className="text-3xl text-[#FF781F] font-bold">Agende uma Demonstração</h2>
-          <p className="text-[#FF781F]">Veja a Hakutaku em ação! Preencha o formulário para agendar uma demonstração personalizada.</p>
+      <section className="flex h-1/2 w-full md:px-20 gap-40 px-40 bg-[#FF781F] flex-col py-20 md:py-10 items-center" id="contato" ref={section2Ref}>
+        <div className="w-full text-center flex  flex-row justify-center items-center ">
+          <div className="flex flex-col w-1/3">
+          <h2 className="text-6xl text-white font-bold" >Valorize seu conhecimento com IA</h2>
+          <p className="text-white">Veja a Hakutaku em ação! Preencha o formulário para agendar uma demonstração personalizada.</p>
+          </div>
+          <div className="w-1/3 flex flex-coç">
+
           <form onSubmit={handleSubmit}>
   <div className="sm:flex sm:flex-wrap justify-center md:gap-x-5 md:py-10 gap-y-5">
-    <div className="w-full max-w-sm text-left mb-5">
+    {/* <div className="w-full max-w-sm text-left mb-5">
       <Label htmlFor="nome">Seu nome</Label>
       <Input type="text" id="nome" value={formData.nome} onChange={handleChange} placeholder="Nome" />
     </div>
     <div className="w-full max-w-sm text-left mb-5">
       <Label htmlFor="empresa">Nome da empresa</Label>
       <Input type="text" id="empresa" value={formData.empresa} onChange={handleChange} placeholder="Nome da empresa" />
-    </div>
-    <div className="w-full max-w-sm text-left mb-5">
+    </div> */}
+    {/* <div className="w-full max-w-sm text-left mb-5">
       <Label htmlFor="funcionarios">Número de funcionários</Label>
       <Select onValueChange={handleSelectChange}>
         <SelectTrigger className="w-full">
@@ -189,26 +216,30 @@ export default function Home() {
           <SelectItem value="+100">+100</SelectItem>
         </SelectContent>
       </Select>
-    </div>
-    <div className="w-full max-w-sm text-left mb-5">
+    </div> */}
+    {/* <div className="w-full max-w-sm text-left mb-5">
       <Label htmlFor="celular">Celular (com DDD)</Label>
       <Input type="text" id="celular" value={formData.celular} onChange={handleChange} placeholder="Celular" />
-    </div>
-    <div className="w-full max-w-sm text-left mb-5">
+    </div> */}
+    <div className="w-full max-w-sm text-left mb-5 text-white">
       <Label htmlFor="email">Email corporativo</Label>
       <Input type="email" id="email" value={formData.email} onChange={handleChange} placeholder="Email" />
     </div>
-    <div className="w-full max-w-sm text-left mb-5">
-      <Label htmlFor="mais">O que a Hakutaku irá mais te ajudar?</Label>
-      <Input type="text" id="mais" value={formData.mais} onChange={handleChange} placeholder="O que a Hakutaku irá mais te ajudar?" />
+    <div className="w-full max-w-sm text-left mb-5 text-white">
+      <Label htmlFor="mais">Como a hakutaku pode te ajudar?</Label>
+      <Input type="text" id="mais" className="h-20" value={formData.mais} onChange={handleChange} placeholder="O que a Hakutaku irá mais te ajudar?" />
     </div>
   </div>
   <Button type="submit" className="w-full text-xl  px-10 sm:w-auto self-center bg-[#FF781F]">Enviar</Button>
 </form>
 
+
+          </div>
+  
+        
         </div>
       </section>
-      <section className="flex flex-col items-center w-full md:my-8 p-5 gap-5 text-[#310808]" id="duvidas">
+      <section className="flex flex-col items-center w-full px-40 md:my-8 p-5 gap-5 text-[#310808]" id="duvidas">
   <h2 className="text-3xl text-[#FF781F] font-bold">Dúvidas frequentes</h2>
   
   <div className="flex flex-col sm:flex-row w-full">
@@ -244,7 +275,22 @@ export default function Home() {
       </Accordion>
     </div>
   </div>
-</section>
+      </section>
+      <footer className="bg-[#393736] text-white w-full px-40">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        {/* Logo à esquerda */}
+        <div className="mb-4 md:mb-0">
+          <Image src={footerImg} alt="Logo" width={150} />
+        </div>
+
+        {/* Informações de contato */}
+        <div className="text-center md:text-right">
+          <p className="text-lg">Telefone: (11) 9 4762-2555</p>
+          <p className="text-lg">Email: raduan.muarrek@hakutaku.co</p>
+        </div>
+      </div>
+    </footer>
+
 
   
       
