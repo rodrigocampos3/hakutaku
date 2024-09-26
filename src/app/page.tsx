@@ -103,7 +103,7 @@ export default function Home() {
 
     
   return (
-    <main className="flex min-h-screen flex-col items-center bg-[#EDE9E1]">
+    <main className="flex flex-col items-center bg-[#EDE9E1]">
       <Component />
       <section className=" flex flex-col px-40   py-20 md:flex-row flex-grow w-full" id="principal">
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
@@ -138,9 +138,9 @@ export default function Home() {
 
 
       </section>
-      <section className="flex py-20 md:py-20 px-40 md:h-screen w-full md:gap-40 flex-col" id="conheca">
+      <section className="flex py-20 md:py-20 px-40 w-full md:gap-40 flex-col" id="conheca">
 
-        <BlurFade className="flex md:h-screen w-full md:gap-40 gap-y-10 flex-col md:flex-row justify-between items-center">
+        <BlurFade className="flex w-full md:gap-40 flex-col md:flex-row justify-between items-center">
 
         <div className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl">
           <h3 className="text-xl md:text-3xl font-bold">Aumento de
@@ -164,9 +164,7 @@ export default function Home() {
 
 
           </BlurFade>
-
-
-        <div className="flex h-screen w-full gap-20 flex-col md:flex-row justify-center text-[#310808]">
+        <div className="flex w-full flex-col md:flex-row justify-center text-[#310808]">
           <div className="w-full md:w-1/3 flex flex-col items-center p-2 text-center">
             <Brain />
             <h3 className="font-bold text-xl pt-3">Busca inteligênte com Gen AI</h3>
@@ -186,7 +184,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex h-1/2 w-full md:px-20 gap-40 px-40 bg-[#FF781F] flex-col py-20 md:py-10 items-center" id="contato" ref={section2Ref}>
+      <section className="flex w-full md:px-20 px-40 bg-[#FF781F] flex-col md:py-10 items-center" id="contato" ref={section2Ref}>
         <div className="w-full text-center flex  flex-row justify-center items-center ">
           <div className="flex flex-col w-1/3 items-center">
             <h2 className="text-6xl text-white font-bold" >Valorize seu conhecimento com IA</h2>
