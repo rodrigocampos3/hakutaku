@@ -7,6 +7,7 @@ import Brain from "@/icons/brain";
 import Lab from "@/icons/lab";
 import { useState } from 'react';
 import BlurFade from "@/components/magicui/blur-fade";
+import whiteFace from "@/icons/whiteFace.png"
 import footerImg from "@/icons/footerImg.svg"
 import KnowledgeManagementSection from "@/components/KnowledgeManagementSection"
 import Peoples from "@/icons/peoples";
@@ -187,9 +188,9 @@ export default function Home() {
       </section>
       <section className="flex h-1/2 w-full md:px-20 gap-40 px-40 bg-[#FF781F] flex-col py-20 md:py-10 items-center" id="contato" ref={section2Ref}>
         <div className="w-full text-center flex  flex-row justify-center items-center ">
-          <div className="flex flex-col w-1/3">
-          <h2 className="text-6xl text-white font-bold" >Valorize seu conhecimento com IA</h2>
-          <p className="text-white">Veja a Hakutaku em ação! Preencha o formulário para agendar uma demonstração personalizada.</p>
+          <div className="flex flex-col w-1/3 items-center">
+            <h2 className="text-6xl text-white font-bold" >Valorize seu conhecimento com IA</h2>
+            <Image src={whiteFace} alt="White face" width={150}></Image>
           </div>
           <div className="w-1/3 flex flex-coç">
 
