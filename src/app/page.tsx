@@ -124,7 +124,7 @@ export default function Home() {
 
         </div>
       </section>
-      <section className="w-full px-40 flex flex-row items-center justify-between">
+      <BlurFade className="w-full px-40 flex flex-row items-center justify-between" delay={0.7}>
         <div className="w-1/2 h-full flex flex-col items-start">
         <AnimatedBeamMultipleOutputDemo></AnimatedBeamMultipleOutputDemo>
         </div>
@@ -137,12 +137,12 @@ export default function Home() {
 
 
 
-      </section>
+      </BlurFade  >
       <section className="flex py-20 md:py-20 px-40 w-full md:gap-40 flex-col" id="conheca">
 
-        <BlurFade className="flex w-full md:gap-40 flex-col md:flex-row justify-between items-center">
+        <BlurFade className="flex w-full md:gap-40 flex-col md:flex-row justify-between items-center" delay={1}>
 
-        <div className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl">
+        <BlurFade className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl">
           <h3 className="text-xl md:text-3xl font-bold">Aumento de
           produtividade</h3>
           <p>Maximize a eficiência operacional e reduza o tempo gasto em buscas por informação. Com a Hakutaku, sua equipe pode focar no que realmente importa,
@@ -150,8 +150,8 @@ export default function Home() {
               <Image alt="imagem" src={icon1} width={200}></Image>
 
 
-        </div>
-        <div className={`flex w-full md:w-2/5 text-white gap-y-2 flex-col items-center text-center bg-[#FF791F] p-8 rounded-3xl ${outfit.className}`}>
+        </BlurFade>
+        <BlurFade className={`flex w-full md:w-2/5 text-white gap-y-2 flex-col items-center text-center bg-[#FF791F] p-8 rounded-3xl ${outfit.className}`}>
       <h3 className="text-xl md:text-3xl font-bold">
         Valorização do conhecimento
       </h3>
@@ -160,11 +160,11 @@ export default function Home() {
         promovendo uma cultura de aprendizado contínuo e inovação. Fortaleça a tomada de decisão e a colaboração efetiva.
       </p>
       <Image alt="imagem" src={icon1} width={200} />
-    </div>
+    </BlurFade>
 
 
           </BlurFade>
-        <div className="flex w-full flex-col md:flex-row justify-center text-[#310808]">
+        <BlurFade className="flex w-full flex-col md:flex-row justify-center text-[#310808]" delay={0.7}>
           <div className="w-full md:w-1/3 flex flex-col items-center p-2 text-center">
             <Brain />
             <h3 className="font-bold text-xl pt-3">Busca inteligênte com Gen AI</h3>
@@ -182,7 +182,7 @@ export default function Home() {
             <h3 className="font-bold text-xl pt-3">Customização de usuário</h3>
             <p>Customize os acessos aos documentos e tipos de insight por cargo de colaborador da empresa.</p>
           </div>
-        </div>
+        </BlurFade>
       </section>
       <section className="flex w-full md:px-20 px-40 bg-[#FF781F] flex-col md:py-10 items-center" id="contato" ref={section2Ref}>
         <div className="w-full text-center flex  flex-row justify-center items-center ">
