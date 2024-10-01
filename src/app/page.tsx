@@ -143,10 +143,10 @@ export default function Home() {
 
         <BlurFade className="flex w-full md:gap-40 flex-col md:flex-row gap-y-10 justify-between items-center" delay={1}>
 
-        <BlurFade className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl border-r-8 border-b-8 border-black">
+        <BlurFade className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col min-h-8 items-center text-center bg-[#FF791F] p-8 rounded-3xl border-r-8 border-b-8 border-black">
           <h3 className="text-xl md:text-3xl font-bold">Aumento de
           produtividade</h3>
-          <p>Reduza o tempo gasto em buscas por informação. Com a Hakutaku, sua equipe pode focar no que realmente importa.</p>
+          <p>Reduza o tempo em buscas por informação. Com a Hakutaku, sua equipe pode focar no que realmente importa.</p> 
               <Image alt="imagem" src={ImgCard} width={200}></Image>
 
 
@@ -156,7 +156,7 @@ export default function Home() {
         Valorização do conhecimento
       </h3>
       <p>
-      Consolide e valorize o conhecimento crítico, mas disperso da sua empresa com a Hakutaku.
+      Consolide e valorize o conhecimento crítico, mas disperso da sua empresa com a Hakutaku. <br /> <span className="text-[#FF791F]">.</span>
       </p>
       <Image alt="imagem" src={icon1} width={200} />
     </BlurFade>
