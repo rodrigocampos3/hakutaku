@@ -108,7 +108,7 @@ export default function Home() {
       <Component />
       <section className=" flex flex-col md:px-40  py-20 md:flex-row flex-grow w-full" id="principal">
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
-        <h1 className={`${outfit.className} text-xl md:text-6xl font-bold leading-relaxed text-[##393736]`}>
+        <h1 className={`${outfit.className} text-2xl md:text-6xl font-bold leading-relaxed text-[##393736]`}>
             Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
             <BlurFade delay={0.05} inView>  
         
@@ -146,8 +146,7 @@ export default function Home() {
         <BlurFade className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl border-r-8 border-b-8 border-black">
           <h3 className="text-xl md:text-3xl font-bold">Aumento de
           produtividade</h3>
-          <p>Maximize a eficiência operacional e reduza o tempo gasto em buscas por informação. Com a Hakutaku, sua equipe pode focar no que realmente importa,
-              impulsionando a produtividade e otimizando recursos. Acelere processos e elimine redundâncias agora.</p>
+          <p>Reduza o tempo gasto em buscas por informação. Com a Hakutaku, sua equipe pode focar no que realmente importa.</p>
               <Image alt="imagem" src={ImgCard} width={200}></Image>
 
 
@@ -157,8 +156,7 @@ export default function Home() {
         Valorização do conhecimento
       </h3>
       <p>
-        Consolide e valorize o conhecimento crítico da sua empresa com a Hakutaku. Nossa plataforma facilita o acesso a informações valiosas,
-        promovendo uma cultura de aprendizado contínuo e inovação. Fortaleça a tomada de decisão e a colaboração efetiva.
+      Consolide e valorize o conhecimento crítico, mas disperso da sua empresa com a Hakutaku.
       </p>
       <Image alt="imagem" src={icon1} width={200} />
     </BlurFade>
@@ -276,15 +274,15 @@ export default function Home() {
     </div>
   </div>
       </section>
-      <footer className="bg-[#393736] text-white w-full px-40">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <footer className="bg-[#393736] text-white w-full md:px-40">
+      <div className="container mx-auto flex flex-row md:flex-row justify-between items-center">
         {/* Logo à esquerda */}
         <div className="mb-4 md:mb-0">
           <Image src={footerImg} alt="Logo" width={150} />
         </div>
 
         {/* Informações de contato */}
-        <div className="text-center md:text-right">
+        <div className=" text-left md:text-right">
           <p className="text-lg">Telefone: (11) 9 4762-2555</p>
           <p className="text-lg">Email: raduan.muarrek@hakutaku.co</p>
         </div>
