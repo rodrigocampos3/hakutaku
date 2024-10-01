@@ -18,6 +18,7 @@ import { Pridi } from "@next/font/google";
 import icon1 from "../icons/Group1.svg"
 import icon2 from "../icons/Group.svg"
 import LogoS from "../icons/logos.svg"
+import ImgCard from "@/icons/imgCard.png"
 import { Component } from "@/components/Nav";
 import {
   Select,
@@ -105,7 +106,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center bg-[#EDE9E1]">
       <Component />
-      <section className=" flex flex-col px-40   py-20 md:flex-row flex-grow w-full" id="principal">
+      <section className=" flex flex-col md:px-40  py-20 md:flex-row flex-grow w-full" id="principal">
         <div className="flex flex-grow flex-col md:pt-20 w-full md:w-3/5 gap-5 p-6">
         <h1 className={`${outfit.className} text-xl md:text-6xl font-bold leading-relaxed text-[##393736]`}>
             Reinvente a Gestão do conhecimento da sua empresa com gen IA</h1>
@@ -124,11 +125,11 @@ export default function Home() {
 
         </div>
       </section>
-      <BlurFade className="w-full px-40 flex flex-row items-center justify-between" delay={0.7}>
-        <div className="w-1/2 h-full flex flex-col items-start">
+      <BlurFade className="w-full md:px-40 flex px-10  md:flex-row flex-col-reverse items-center justify-between" delay={0.7}>
+        <div className="md:w-1/2 h-full w-full flex items-start ">
         <AnimatedBeamMultipleOutputDemo></AnimatedBeamMultipleOutputDemo>
         </div>
-        <div className="w-1/2 h-full flex flex-col justify-center">
+        <div className="md:w-1/2 h-full flex flex-col justify-center  py-5 ">
           <h1 className="text-4xl font-bold">Acesso Simplificado a Dados de Múltiplas Fontes</h1>
           <p className="text-xl">Nosso sistema integra e consome dados de diversas fontes, facilitando o acesso a informações relevantes de maneira centralizada. Com uma interface intuitiva via chat, você pode buscar e consultar dados rapidamente, sem complicações.</p>
 
@@ -138,20 +139,20 @@ export default function Home() {
 
 
       </BlurFade  >
-      <section className="flex py-20 md:py-20 px-40 w-full md:gap-40 flex-col" id="conheca">
+      <section className="flex py-20 md:py-20 md:px-40 px-10 w-full md:gap-40 gap-y- flex-col" id="conheca">
 
-        <BlurFade className="flex w-full md:gap-40 flex-col md:flex-row justify-between items-center" delay={1}>
+        <BlurFade className="flex w-full md:gap-40 flex-col md:flex-row gap-y-10 justify-between items-center" delay={1}>
 
-        <BlurFade className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl">
+        <BlurFade className="flex w-full md:w-2/5 text-white  gap-y-2 flex-col  items-center text-center bg-[#FF791F] p-8 rounded-3xl border-r-8 border-b-8 border-black">
           <h3 className="text-xl md:text-3xl font-bold">Aumento de
           produtividade</h3>
           <p>Maximize a eficiência operacional e reduza o tempo gasto em buscas por informação. Com a Hakutaku, sua equipe pode focar no que realmente importa,
               impulsionando a produtividade e otimizando recursos. Acelere processos e elimine redundâncias agora.</p>
-              <Image alt="imagem" src={icon1} width={200}></Image>
+              <Image alt="imagem" src={ImgCard} width={200}></Image>
 
 
         </BlurFade>
-        <BlurFade className={`flex w-full md:w-2/5 text-white gap-y-2 flex-col items-center text-center bg-[#FF791F] p-8 rounded-3xl ${outfit.className}`}>
+        <BlurFade className={`flex w-full md:w-2/5 text-white gap-y-2 flex-col items-center text-center bg-[#FF791F] p-8 rounded-3xl border-r-8 border-b-8 border-black ${outfit.className}`}>
       <h3 className="text-xl md:text-3xl font-bold">
         Valorização do conhecimento
       </h3>
@@ -164,7 +165,7 @@ export default function Home() {
 
 
           </BlurFade>
-        <BlurFade className="flex w-full flex-col md:flex-row justify-center text-[#310808]" delay={0.7}>
+        <BlurFade className="flex w-full flex-col md:flex-row justify-center    text-[#310808]" delay={0.7}>
           <div className="w-full md:w-1/3 flex flex-col items-center p-2 text-center">
             <Brain />
             <h3 className="font-bold text-xl pt-3">Busca inteligênte com Gen AI</h3>
@@ -184,13 +185,13 @@ export default function Home() {
           </div>
         </BlurFade>
       </section>
-      <section className="flex w-full md:px-20 px-40 bg-[#FF781F] flex-col md:py-10 items-center" id="contato" ref={section2Ref}>
-        <div className="w-full text-center flex  flex-row justify-center items-center ">
-          <div className="flex flex-col w-1/3 items-center">
-            <h2 className="text-6xl text-white font-bold" >Valorize seu conhecimento com IA</h2>
+      <section className="flex w-full md:px-40 px-10 bg-[#FF781F] flex-col py-10 items-center" id="contato" ref={section2Ref}>
+        <div className="w-full text-center flex flex-col md:flex-row justify-center items-center ">
+          <div className="flex flex-col md:w-1/3 items-center px-10">
+            <h2 className="text-4xl md:text-6xl text-white font-bold" >Valorize seu conhecimento com IA</h2>
             <Image src={whiteFace} alt="White face" width={150}></Image>
           </div>
-          <div className="w-1/3 flex flex-coç">
+          <div className="md:w-1/3 flex flex-col">
 
           <form onSubmit={handleSubmit}>
   <div className="sm:flex sm:flex-wrap justify-center md:gap-x-5 md:py-10 gap-y-5">
@@ -222,14 +223,14 @@ export default function Home() {
     </div> */}
     <div className="w-full max-w-sm text-left mb-5 text-white">
       <Label htmlFor="email">Email corporativo</Label>
-      <Input type="email" id="email" value={formData.email} onChange={handleChange} placeholder="Email" />
+      <Input type="email" id="email" value={formData.email} onChange={handleChange} placeholder="Email" className="text-black placeholder:text-black" />
     </div>
     <div className="w-full max-w-sm text-left mb-5 text-white">
       <Label htmlFor="mais">Como a hakutaku pode te ajudar?</Label>
-      <Input type="text" id="mais" className="h-20" value={formData.mais} onChange={handleChange} placeholder="O que a Hakutaku irá mais te ajudar?" />
+      <Input   type="text" id="mais" value={formData.mais} onChange={handleChange} placeholder="O que a Hakutaku irá mais te ajudar?" className="text-black placeholder:text-black h-20" />
     </div>
   </div>
-  <Button type="submit" className="w-full text-xl  px-10 sm:w-auto self-center bg-[#FF781F]">Enviar</Button>
+  <Button type="submit" className="w-full text-xl  px-10 sm:w-auto self-center bg-white text-black">Enviar</Button>
 </form>
 
 
@@ -238,7 +239,7 @@ export default function Home() {
         
         </div>
       </section>
-      <section className="flex flex-col items-center w-full px-40 md:my-8 p-5 gap-5 text-[#310808]" id="duvidas">
+      <section className="flex flex-col items-center w-full md:px-40 md:my-8 p-5 gap-5 text-[#310808]" id="duvidas">
   <h2 className="text-3xl text-[#FF781F] font-bold">Dúvidas frequentes</h2>
   
   <div className="flex flex-col sm:flex-row w-full">

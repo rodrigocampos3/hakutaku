@@ -3,10 +3,11 @@
 import React, { forwardRef, useRef } from "react";
 import Facebusca from "@/icons/faceBusca.png"
 import Image from "next/image";
-
+import whatsapp from "@/icons/whatsapp.png"
+import salesforce from "@/icons/Salesforce.jpeg"
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
-
+import githubIcon from "@/icons/github.png"
 
 
 const Circle = forwardRef<
@@ -59,10 +60,10 @@ export function AnimatedBeamMultipleOutputDemo({
             <Icons.googleDocs />
           </Circle>
           <Circle ref={div3Ref}>
-            <Icons.whatsapp />
+          <Image src={githubIcon} width={80} alt="face avatar" ></Image>
           </Circle>
           <Circle ref={div4Ref}>
-            <Icons.messenger />
+          <Image src={salesforce} width={120} alt="face avatar" ></Image>
           </Circle>
           <Circle ref={div5Ref}>
             <Icons.notion />
